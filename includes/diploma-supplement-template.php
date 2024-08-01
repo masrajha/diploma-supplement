@@ -28,8 +28,8 @@ $header = array_shift($data); // Extract header
 
 <div id="diploma-table-container">
     <input class="search" placeholder="Search" />
-    <button class="sort" data-sort="name">Sort by name</button>
-    <button class="sort" data-sort="npm">Sort by NPM</button>
+    <button class="sort" data-sort="name">Sort by Name</button>
+    <button class="sort" data-sort="npm">Sort by Student ID</button>
 
     <table id="diplomaTable" class="display">
         <thead>
@@ -45,10 +45,10 @@ $header = array_shift($data); // Extract header
             <?php if (!empty($data)): ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td class="npm"><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
+                        <td class="student-id"><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
                         <td class="name"><?php echo esc_html($row[2]); ?></td> <!-- Nama -->
-                        <td class="nomor-skpi"><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
-                        <td class="tanggal-transkrip"><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
+                        <td class="document-number"><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
+                        <td class="graduation-date><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
                         <td>
                             <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[44]); ?>">Preview</a>
                         </td>

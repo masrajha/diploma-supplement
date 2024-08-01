@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     var options = {
-        valueNames: ['npm', 'name', 'nomor-skpi', 'tanggal-transkrip'],
-        page: 20, // Number of items per page
+        valueNames: ['student-id', 'name', 'document-number', 'graduation-date'],
+        page: 10, // Number of items per page
         pagination: true
     };
 
