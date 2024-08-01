@@ -33,3 +33,52 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Kontainer umum untuk input dan tombol */
+#diploma-table-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Gaya untuk input pencarian */
+#diploma-table-container .search {
+    width: 250px;
+    padding: 10px 15px;
+    margin: 0 10px 20px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#diploma-table-container .search:focus {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Gaya untuk tombol sort */
+#diploma-table-container .sort {
+    padding: 10px 20px;
+    margin: 0 10px 20px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#diploma-table-container .sort:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+#diploma-table-container .sort:focus {
+    outline: none;
+}

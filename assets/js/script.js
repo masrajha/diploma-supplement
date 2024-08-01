@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     var options = {
         valueNames: ['npm', 'name', 'nomor-skpi', 'tanggal-transkrip'],
-        page: 5, // Number of items per page
+        page: 20, // Number of items per page
         pagination: true
     };
 
