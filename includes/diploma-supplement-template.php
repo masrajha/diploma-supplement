@@ -48,7 +48,7 @@ $header = array_shift($data); // Extract header
                         <td class="student-id"><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
                         <td class="name"><?php echo esc_html($row[2]); ?></td> <!-- Nama -->
                         <td class="document-number"><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
-                        <td class="graduation-date><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
+                        <td class="graduation-date"><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
                         <td>
                             <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[44]); ?>">Preview</a>
                         </td>
