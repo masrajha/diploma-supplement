@@ -29,7 +29,7 @@ $header = array_shift($data); // Extract header
 <div id="diploma-table-container">
     <input class="search" placeholder="Search" />
     <button class="sort" data-sort="name">Sort by Name</button>
-    <button class="sort" data-sort="npm">Sort by Student ID</button>
+    <button class="sort" data-sort="student-id">Sort by Student ID</button>
 
     <table id="diplomaTable" class="display">
         <thead>
