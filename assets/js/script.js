@@ -1,7 +1,4 @@
 jQuery(document).ready(function($) {
-    // Inisialisasi DataTables
-    $('#diplomaTable').DataTable();
-
     var modal = $('#ds-modal');
     var iframe = $('#ds-modal-iframe');
 
