@@ -46,7 +46,7 @@ $header = array_shift($data); // Extract header
                         <td><?php echo esc_html($row[30]); ?></td> <!-- Nomor SKPI -->
                         <td><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
                         <td>
-                            <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[41]); ?>">Preview</a>
+                            <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[44]); ?>">Preview</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
