@@ -30,10 +30,10 @@ $header = array_shift($data); // Extract header
     <table id="diplomaTable" class="display">
         <thead>
             <tr>
-                <th>NPM</th>
-                <th>Nama</th>
-                <th>Nomor SKPI</th>
-                <th>Tanggal Transkrip</th>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Document Number</th>
+                <th>Graduation Date</th>
                 <th>Preview</th>
             </tr>
         </thead>
@@ -43,7 +43,7 @@ $header = array_shift($data); // Extract header
                     <tr>
                         <td><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
                         <td><?php echo esc_html($row[2]); ?></td> <!-- Nama -->
-                        <td><?php echo esc_html($row[30]); ?></td> <!-- Nomor SKPI -->
+                        <td><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
                         <td><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
                         <td>
                             <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[44]); ?>">Preview</a>
