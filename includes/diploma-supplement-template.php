@@ -6,21 +6,30 @@ $csv_url = "https://docs.google.com/spreadsheets/d/$sheet_id/gviz/tq?tqx=out:csv
 
 // Mengambil data CSV
 $response = wp_remote_get($csv_url);
+$data = array();
+
 if (is_array($response) && !is_wp_error($response)) {
     $csv_body = wp_remote_retrieve_body($response);
-    $data = array_map('str_getcsv', explode("\n", $csv_body));
-    $header = array_shift($data); // Mengambil header
+    $lines = str_getcsv($csv_body, "\n"); // Get each line
+
+    // Parse each line as CSV
+    foreach ($lines as $line) {
+        $data[] = str_getcsv($line, ',', '"'); // Parse the CSV line with comma as delimiter and double quotes as enclosure
+    }
 }
+
+$header = array_shift($data); // Ambil header
+
 ?>
 
 <div class="ds-container">
     <table id="diplomaTable" class="display">
         <thead>
             <tr>
-                <th>Student ID</th>
-                <th>Name</th>
-                <th>Document Number</th>
-                <th>Graduate Date</th>
+                <th>NPM</th>
+                <th>Nama</th>
+                <th>Nomor SKPI</th>
+                <th>Tanggal Transkrip</th>
                 <th>Preview</th>
             </tr>
         </thead>
