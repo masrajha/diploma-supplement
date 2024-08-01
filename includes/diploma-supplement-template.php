@@ -4,22 +4,26 @@ $sheet_id = '119wjg7Z_jjZi0v7tmHpxOLZWaPhbzeV3k9I4daclJdI';
 $sheet_name = 'Data Wisuda';
 $csv_url = "https://docs.google.com/spreadsheets/d/$sheet_id/gviz/tq?tqx=out:csv&sheet=$sheet_name";
 
-// Mengambil data CSV
+// Fetch CSV data
 $response = wp_remote_get($csv_url);
 $data = array();
 
 if (is_array($response) && !is_wp_error($response)) {
     $csv_body = wp_remote_retrieve_body($response);
-    $lines = str_getcsv($csv_body, "\n"); // Get each line
+    $temp = tmpfile(); // Create a temporary file to store CSV data
 
-    // Parse each line as CSV
-    foreach ($lines as $line) {
-        $data[] = str_getcsv($line, ',', '"'); // Parse the CSV line with comma as delimiter and double quotes as enclosure
+    fwrite($temp, $csv_body); // Write CSV data to the temporary file
+    fseek($temp, 0); // Rewind the file pointer to the start of the file
+
+    // Use fgetcsv to parse the CSV data properly handling multiline fields
+    while (($line = fgetcsv($temp, 0, ',', '"')) !== FALSE) {
+        $data[] = $line;
     }
+
+    fclose($temp); // Close the temporary file
 }
 
-$header = array_shift($data); // Ambil header
-
+$header = array_shift($data); // Extract header
 ?>
 
 <div class="ds-container">
