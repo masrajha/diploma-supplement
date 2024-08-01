@@ -1,4 +1,12 @@
 jQuery(document).ready(function($) {
+    var options = {
+        valueNames: ['npm', 'name', 'nomor-skpi', 'tanggal-transkrip'],
+        page: 5, // Number of items per page
+        pagination: true
+    };
+
+    var diplomaList = new List('diploma-table-container', options);
+
     var modal = $('#ds-modal');
     var iframe = $('#ds-modal-iframe');
 

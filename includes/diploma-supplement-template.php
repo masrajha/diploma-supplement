@@ -26,10 +26,14 @@ if (is_array($response) && !is_wp_error($response)) {
 $header = array_shift($data); // Extract header
 ?>
 
-<div class="ds-container">
+<div id="diploma-table-container">
+    <input class="search" placeholder="Search" />
+    <button class="sort" data-sort="name">Sort by name</button>
+    <button class="sort" data-sort="npm">Sort by NPM</button>
+
     <table id="diplomaTable" class="display">
         <thead>
-            <tr>
+        <tr>
                 <th>Student ID</th>
                 <th>Name</th>
                 <th>Document Number</th>
@@ -37,14 +41,14 @@ $header = array_shift($data); // Extract header
                 <th>Preview</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="list">
             <?php if (!empty($data)): ?>
                 <?php foreach ($data as $row): ?>
                     <tr>
-                        <td><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
-                        <td><?php echo esc_html($row[2]); ?></td> <!-- Nama -->
-                        <td><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
-                        <td><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
+                        <td class="npm"><?php echo esc_html($row[1]); ?></td> <!-- NPM -->
+                        <td class="name"><?php echo esc_html($row[2]); ?></td> <!-- Nama -->
+                        <td class="nomor-skpi"><?php echo esc_html($row[28]); ?></td> <!-- Nomor SKPI -->
+                        <td class="tanggal-transkrip"><?php echo esc_html($row[7]); ?></td> <!-- Tanggal Transkrip -->
                         <td>
                             <a href="#" class="ds-view-doc" data-file-id="<?php echo esc_attr($row[44]); ?>">Preview</a>
                         </td>
@@ -53,6 +57,8 @@ $header = array_shift($data); // Extract header
             <?php endif; ?>
         </tbody>
     </table>
+
+    <ul class="pagination"></ul>
 </div>
 
 <div id="ds-modal" class="ds-modal">
